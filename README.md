@@ -33,9 +33,9 @@ graph TD
     UI -->|REST| API[NovaTrade API]
     
     subgraph "The Exchange Core"
-        API -->|Post Order| Book[Order Book (Redis)]
+        API -->|Post Order| Book["Order Book (Redis)"]
         Book -->|Match| Engine[Matching Engine]
-        Engine -->|Trade Executed| EventBus[(RabbitMQ)]
+        Engine -->|Trade Executed| EventBus[("RabbitMQ")]
     end
 
     subgraph "The Intelligence Layer"
